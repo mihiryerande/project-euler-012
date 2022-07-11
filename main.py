@@ -23,9 +23,10 @@
 #     What is the value of the first triangle number to have over five hundred divisors?
 
 from math import floor, sqrt
+from typing import Tuple
 
 
-def divisor_count(x):
+def divisor_count(x: int) -> int:
     """
     Returns the number of divisors of `x`.
 
@@ -33,7 +34,7 @@ def divisor_count(x):
          x (int): Natural number
 
     Returns:
-        Number of divisors of `x`.
+        Number of divisors of `x`
 
     Raises:
         AssertError: if incorrect params are given
@@ -50,17 +51,22 @@ def divisor_count(x):
     return count
 
 
-def main(d):
+def main(d: int) -> Tuple[int, int, int]:
     """
-    Returns a tuple (n, t_n, d_c), where `t_n` is the `n`th triangular number
-      and `t_n` is the first triangular number having more than d divisors.
-      d_c is the actual number of divisors of t_n, so d_c > d.
+    Returns the first triangular number to have more than `d` divisors
+      as a tuple (n, t_n, d_c), where
+      `t_n` is the `n`th triangular number and
+      `d_c` is the actual number of divisors of `t_n`, so `d_c` > `d`.
 
     Args:
         d (int): Natural number
 
     Returns:
-        Tuple of (n, t_n, d_c)
+        (Tuple[int, int, int]):
+            Tuple of ...
+              * Index `n` of first triangular number having more than `d` divisors
+              * Triangular number `t_n`
+              * Number of divisors `d_c` of `t_n`
 
     Raises:
         AssertError: if incorrect params are given
